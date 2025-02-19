@@ -1,0 +1,13 @@
+.root {
+  background: var(--Neutral-White);
+
+  .content {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+
+    @include respond(desktop) {
+      padding: 0 20px;
+    }
+  }
+}

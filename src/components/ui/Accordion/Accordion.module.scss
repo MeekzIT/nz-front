@@ -1,0 +1,51 @@
+.item {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  &[data-state='closed'] {
+    gap: 0;
+  }
+
+  .header {
+    width: 100%;
+
+    .button {
+      display: flex;
+      align-items: center;
+
+      flex-direction: row;
+      justify-content: space-between;
+
+      width: 100%;
+
+      cursor: pointer;
+
+      @include manrope_700_18;
+    }
+
+    .arrow {
+      transition: 0.3s all;
+
+      svg {
+        min-inline-size: 24px;
+        min-block-size: 24px;
+      }
+    }
+
+    &[data-state='open'] {
+      .arrow {
+        transform: rotate(-180deg);
+
+        &.plus {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .content {
+    overflow: hidden;
+  }
+}

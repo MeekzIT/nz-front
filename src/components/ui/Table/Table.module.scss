@@ -1,0 +1,45 @@
+.root {
+  border-spacing: 0;
+
+  th {
+    color: var(--Text-Blue);
+  }
+
+  th,
+  td {
+    padding: 16px;
+    text-align: center;
+    z-index: 1;
+
+    border-bottom: 1px solid var(--Neutral-Gray-3);
+    background-color: var(--White-100);
+
+    &:first-child {
+      text-align: left;
+      @include respond(laptop) {
+        @include manrope_700_12;
+      }
+
+      @include respond(mobileL) {
+        @include manrope_700_12;
+      }
+
+      @include manrope_700_14;
+    }
+  }
+
+  &.fullWidth {
+    min-width: 100%;
+  }
+
+  &.withVerticalBorder {
+    th,
+    td {
+      border-right: 1px solid var(--Black-5);
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}

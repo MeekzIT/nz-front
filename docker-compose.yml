@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  cryptomus-nodes-landing:
+    image: ${IMAGE}:${TAG}
+    container_name: cryptomus-nodes-landing
+    restart: always
+    volumes:
+      - ./.env:/app/.env
+    env_file:
+      - ./.env.${ENV_FILE}
+    ports:
+      - '127.0.0.1:${PORT}:80'

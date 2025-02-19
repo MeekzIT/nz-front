@@ -1,0 +1,22 @@
+.anchors {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 82px;
+
+  border-inline-start: 1px solid var(--Stoke-Black);
+  padding-inline-start: 24px;
+  margin-inline-start: 24px;
+  block-size: fit-content;
+  position: sticky;
+  inset-block-start: 24px;
+  @include respond(tablet) {
+    margin-block-end: 32px;
+    margin-inline-start: 0px;
+    position: static;
+    margin-top: 0px;
+  }
+}
+.active {
+  color: var(--Accents-Brand-Blue);
+}

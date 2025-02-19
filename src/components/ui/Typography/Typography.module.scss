@@ -1,0 +1,481 @@
+// Font-size
+
+.headlinesTitle1B {
+  @include respond(laptop) {
+    @include manrope_700_56;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_700_40;
+  }
+
+  @include manrope_700_56;
+}
+
+.headlinesTitle1 {
+  @include respond(laptop) {
+    @include manrope_400_48;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_400_40;
+  }
+
+  @include manrope_400_56;
+}
+
+.headlinesTitle2B {
+  @include respond(laptop) {
+    @include manrope_700_32;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_700_28;
+  }
+
+  @include respond(mobile) {
+    @include manrope_700_24;
+  }
+  @include manrope_700_48;
+}
+
+.headlinesTitle2 {
+  @include respond(laptop) {
+    @include manrope_400_32;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_400_28;
+  }
+
+  @include manrope_400_48;
+}
+
+.headlinesH4Bold {
+  @include respond(laptop) {
+    @include manrope_700_20;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_700_18;
+  }
+
+  @include manrope_700_24;
+}
+
+.headlinesH5 {
+  @include respond(laptop) {
+    @include manrope_600_14;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_600_12;
+  }
+
+  @include manrope_600_16;
+}
+
+.HeadlinesTitle3B {
+  @include respond(laptop) {
+    @include manrope_700_28;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_700_24;
+  }
+
+  @include manrope_700_36;
+}
+
+.paragraphsBody {
+  @include respond(laptop) {
+    @include manrope_400_18;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_400_16;
+  }
+
+  @include manrope_400_20;
+}
+
+.paragraphsSubtitle {
+  @include respond(laptop) {
+    @include manrope_400_20;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_400_18;
+  }
+
+  @include manrope_400_24;
+}
+
+.paragraphsSubtitleM {
+  @include respond(laptop) {
+    @include manrope_500_20;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_500_18;
+  }
+
+  @include manrope_500_24;
+}
+
+.paragraphsSubtitleSemibold {
+  @include respond(laptop) {
+    @include manrope_600_20;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_600_18;
+  }
+
+  @include manrope_600_24;
+}
+
+.paragraphsSubtitleBold {
+  @include respond(laptop) {
+    @include manrope_700_20;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_700_18;
+  }
+
+  @include manrope_700_24;
+}
+
+.paragraphsCaption1 {
+  @include respond(laptop) {
+    @include manrope_400_16;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_400_16;
+  }
+
+  @include manrope_400_18;
+}
+
+.paragraphsCaption2 {
+  @include respond(laptop) {
+    @include manrope_400_14;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_400_14;
+  }
+
+  @include manrope_400_16;
+}
+
+.paragraphsCaptionMedium {
+  @include respond(laptop) {
+    @include manrope_600_14;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_600_14;
+  }
+
+  @include manrope_600_16;
+}
+
+.paragraphsCaption2M {
+  @include respond(laptop) {
+    @include manrope_500_14;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_500_14;
+  }
+
+  @include manrope_500_16;
+}
+
+.paragraphsCaptionMedium1M {
+  @include respond(laptop) {
+    @include manrope_500_16;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_500_16;
+  }
+
+  @include manrope_500_18;
+}
+
+.paragraphsCaption3M {
+  @include respond(laptop) {
+    @include manrope_400_12;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_500_12;
+  }
+
+  @include manrope_400_14;
+}
+
+.paragraphsCaption4M {
+  @include respond(laptop) {
+    @include manrope_500_10;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_500_10;
+  }
+
+  @include manrope_500_12;
+}
+
+.paragraphsCaptionSemibold {
+  @include respond(laptop) {
+    @include manrope_600_12;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_600_12;
+  }
+
+  @include manrope_600_14;
+}
+
+.paragraphsCaptionSemibold2 {
+  @include respond(laptop) {
+    @include manrope_600_14;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_600_14;
+  }
+
+  @include manrope_600_16;
+}
+
+.paragraphsCaptionSemibold3 {
+  @include respond(laptop) {
+    @include manrope_600_12;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_600_12;
+  }
+
+  @include manrope_600_14;
+}
+
+.paragraphsCaptionSemibold4 {
+  @include respond(laptop) {
+    @include manrope_600_10;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_600_10;
+  }
+
+  @include manrope_600_12;
+}
+
+.paragraphsCaptionBold {
+  @include respond(laptop) {
+    @include manrope_700_12;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_700_12;
+  }
+
+  @include manrope_700_14;
+}
+
+.paragraphsCaptionBold1B {
+  @include respond(laptop) {
+    @include manrope_700_16;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_700_14;
+  }
+
+  @include manrope_700_18;
+}
+
+.paragraphsCaptionBold2B {
+  @include respond(laptop) {
+    @include manrope_700_14;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_700_14;
+  }
+
+  @include manrope_700_16;
+}
+
+.paragraphsCaption3B {
+  @include respond(laptop) {
+    @include manrope_700_12;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_700_12;
+  }
+
+  @include manrope_700_14;
+}
+
+.paragraphsCaptionSemibold2 {
+  @include respond(laptop) {
+    @include manrope_600_14;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_600_14;
+  }
+
+  @include manrope_600_16;
+}
+
+.paragraphsCaptionSemibold3 {
+  @include respond(laptop) {
+    @include manrope_600_12;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_600_12;
+  }
+
+  @include manrope_600_14;
+}
+
+.paragraphsNameTarif {
+  @include respond(laptop) {
+    @include manrope_700_12;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_700_12;
+  }
+
+  @include manrope_700_14;
+}
+
+.paragraphsPlan {
+  @include respond(laptop) {
+    @include manrope_700_14;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_700_12;
+  }
+
+  @include manrope_700_16;
+}
+
+.paragraphsPriceSlashTarif {
+  @include respond(laptop) {
+    @include manrope_700_16;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_700_14;
+  }
+
+  @include manrope_500_18;
+}
+
+.elementsLimitTarif {
+  @include respond(laptop) {
+    @include manrope_600_12;
+  }
+
+  @include respond(mobileL) {
+    @include manrope_600_10;
+  }
+
+  @include manrope_600_14;
+}
+
+.elementsCategoryBold {
+  @include manrope_700_24;
+}
+
+.elementsCategory {
+  @include manrope_400_24;
+}
+
+.elementsTitle {
+  @include manrope_600_20_spacing;
+}
+
+.elementsButton {
+  @include manrope_700_18;
+}
+
+.elementsInput {
+  @include manrope_400_18;
+}
+
+.elementsCalendar {
+  @include manrope_400_16;
+}
+
+.elementsMessage {
+  @include manrope_400_15_spacing;
+}
+
+.elementsPlaceholder,
+.elementsCaption {
+  @include manrope_400_12_spacing;
+}
+
+.elementsCaption2 {
+  @include manrope_400_10_spacing;
+}
+
+.elementsButtonSmall {
+  @include manrope_400_14_spacing;
+}
+
+.searchTitle {
+  @include manrope_700_14;
+}
+
+.searchPlaceholder {
+  @include manrope_400_20;
+}
+
+// Text-align
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+// Text-decoration
+.underline {
+  text-decoration: underline;
+}
+
+.none {
+  text-decoration: none;
+}
+
+
+// Color
+.grey {
+  color: var(--Neutral-Gray-1);
+}
+
+.white {
+  color: var(--Neutral-White);
+}

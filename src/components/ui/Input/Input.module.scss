@@ -1,0 +1,136 @@
+.container {
+  width: 100%;
+
+  .inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--Neutral-Grey-2);
+
+    .clear {
+      position: absolute;
+      right: 16px;
+      cursor: pointer;
+
+      &.right {
+        right: 50px;
+      }
+    }
+
+    .element {
+      touch-action: manipulation;
+      user-select: none;
+
+      position: absolute;
+      z-index: 1;
+      right: 16px;
+
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: inherit;
+      white-space: nowrap;
+
+      background: none;
+      border: none;
+
+      width: 24px;
+
+      &.left {
+        right: unset;
+        left: 16px;
+      }
+
+      &.clickable {
+        cursor: pointer;
+      }
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+.labelInputWrapper {
+  width: 100%;
+  padding: 19px 16px;
+  height: 58px;
+  background-color: var(--Neutral-White);
+  border: 2px solid var(--Neutral-Gray-3);
+  border-radius: 8px;
+
+  @-moz-document url-prefix() {
+    display: flex;
+  }
+
+  &.paddingRight {
+    padding-right: 76px;
+  }
+
+  &.paddingLeft {
+    padding-left: 50px;
+  }
+
+  &.disabled {
+    color: var(--Neutral-Gray-1);
+    background-color: var(--Chart-5);
+    border: 2px solid var(--Neutral-Gray-3);
+  }
+
+  &.focus {
+    border: 2px solid var(--Accents-Light-Blue);
+  }
+
+  &.invalid {
+    border: 2px solid var(--Accents-Red);
+  }
+
+  .label {
+    position: absolute;
+    color: var(--Neutral-Gray-1);
+    pointer-events: none;
+    @include transition;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &.focus {
+      transform: translateY(-80%);
+    }
+  }
+
+  .input {
+    @include manrope_600_14;
+
+    width: 75%;
+
+    color: var(--Neutral-Black);
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &.isCheckedLabel {
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+
+    &.isCheckedValue {
+      margin-top: 8px;
+    }
+
+    &::placeholder {
+      color: var(--Neutral-Gray-1);
+    }
+
+    &.isFocus:focus {
+      margin-top: 8px;
+    }
+
+    @include transition;
+  }
+}

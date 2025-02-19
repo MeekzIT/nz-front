@@ -1,0 +1,72 @@
+{
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "next"],
+  "plugins": ["@typescript-eslint", "prettier"],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": 0,
+    "react/jsx-no-target-blank": "off",
+    "react-hooks/exhaustive-deps": "off",
+    "react/display-name": "off",
+    "no-duplicate-imports": 2,
+    "padding-line-between-statements": [
+      "warn",
+      {
+        "blankLine": "always",
+        "prev": "multiline-block-like",
+        "next": "*"
+      },
+      {
+        "blankLine": "always",
+        "prev": ["const", "let", "var"],
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": ["const", "let", "var"],
+        "next": ["const", "let", "var"]
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": [
+          "return",
+          "throw",
+          "try",
+          "while",
+          "do",
+          "if",
+          "switch",
+          "function",
+          "for",
+          "multiline-const"
+        ]
+      },
+      {
+        "blankLine": "always",
+        "prev": "multiline-const",
+        "next": "*"
+      }
+    ],
+    // "@typescript-eslint/padding-line-between-statements": [
+    //   "warn",
+    //   {
+    //     "blankLine": "always",
+    //     "prev": "*",
+    //     "next": [
+    //       "interface",
+    //       "type"
+    //     ]
+    //   }
+    // ],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "off",
+    "prettier/prettier": 1
+  }
+}

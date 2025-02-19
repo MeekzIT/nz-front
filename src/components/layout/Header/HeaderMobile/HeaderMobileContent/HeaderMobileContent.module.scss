@@ -1,0 +1,24 @@
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-bottom: 1px solid var(--Stoke-Black);
+  padding: 24px 0;
+  margin-bottom: 32px;
+
+  .link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--Neutral-Whit e);
+  }
+}
+
+.button {
+  width: fit-content;
+  margin-left: auto;
+
+  @include respond(mobileL) {
+    width: 100%;
+  }
+}

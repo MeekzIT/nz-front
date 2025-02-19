@@ -1,0 +1,468 @@
+// Media Queries Mixins
+@mixin respond($breakpoint) {
+  @if $breakpoint == desktop {
+    @media only screen and (width <= 1440px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == laptopL {
+    @media only screen and (width <= 1024px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == laptop {
+    @media only screen and (width <= 824px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tablet {
+    @media only screen and (width <= 768px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tabletSM {
+    @media only screen and (width <= 685px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tabletS {
+    @media only screen and (width <= 540px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobileXL {
+    @media only screen and (width <= 475px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobileL {
+    @media only screen and (width <= 430px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media only screen and (width <= 375px) {
+      @content;
+    }
+  }
+}
+
+// Smooth Transition
+@mixin transition {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+// Typography Mixins
+
+@mixin manrope_600_48_spacing {
+  font-size: 48px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -2.4px;
+}
+
+@mixin manrope_600_36 {
+  font-size: 36px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_600_32_spacing {
+  font-size: 32px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -1.6px;
+}
+
+@mixin manrope_600_28_spacing {
+  font-size: 28px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -1.4px;
+}
+
+@mixin manrope_600_26 {
+  font-size: 26px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_700_48 {
+  font-size: 48px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_700_32 {
+  font-size: 32px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_700_28 {
+  font-size: 28px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_700_24 {
+  font-size: 24px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_600_24_spacing {
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -1.2px;
+}
+
+@mixin manrope_600_24 {
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_400_24 {
+  font-size: 24px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_700_20 {
+  font-size: 20px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_600_20 {
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_600_20_spacing {
+  font-size: 20px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -1px;
+}
+
+@mixin manrope_400_56 {
+  font-size: 56px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_400_48 {
+  font-size: 48px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_400_40 {
+  font-size: 40px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_400_32 {
+  font-size: 32px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_400_28 {
+  font-size: 28px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_400_20 {
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_700_56 {
+  font-size: 56px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_700_56 {
+  font-size: 56px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_700_40 {
+  font-size: 40px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_700_36 {
+  font-size: 36px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_700_28 {
+  font-size: 28px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_700_24 {
+  font-size: 24px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_700_18 {
+  font-size: 18px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_700_18 {
+  font-size: 18px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_600_18 {
+  font-size: 18px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_400_18 {
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_700_16 {
+  font-size: 16px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_600_16 {
+  font-size: 16px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_600_14 {
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 20px;
+}
+
+@mixin manrope_600_13 {
+  font-size: 13px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_600_12 {
+  font-size: 12px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 20px;
+}
+
+@mixin manrope_600_10 {
+  font-size: 10px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_500_24 {
+  font-size: 24px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_500_20 {
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_500_18 {
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_500_16 {
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_500_14 {
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_500_12 {
+  font-size: 12px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 14px;
+}
+
+@mixin manrope_500_11 {
+  font-size: 11px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_500_10 {
+  font-size: 10px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 14px;
+}
+
+@mixin manrope_400_16 {
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_400_15_spacing {
+  font-size: 15px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.75px;
+}
+
+@mixin manrope_700_14 {
+  font-size: 14px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_700_13 {
+  font-size: 13px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_700_12 {
+  font-size: 12px;
+  font-weight: 700;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_400_14 {
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 20px;
+}
+
+@mixin manrope_400_14_spacing {
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.7px;
+}
+
+@mixin manrope_400_13 {
+  font-size: 13px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin manrope_400_12 {
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 20px;
+}
+
+@mixin manrope_400_12_spacing {
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.6px;
+}
+
+@mixin manrope_400_10_spacing {
+  font-size: 10px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.5px;
+}

@@ -1,0 +1,95 @@
+variables:
+  SERVICE: $CI_PROJECT_NAME
+  REGISTRY: dockerhub.enot.work
+  CONTAINER_IMAGE: $REGISTRY/$CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME
+  CONTAINER_IMAGE_TAG: $CI_COMMIT_REF_SLUG-$CI_COMMIT_SHORT_SHA
+  LOCAL_PATH: /home/cryptomus/svc/$CI_PROJECT_NAME
+  STAGE_SERVER: 31.133.209.20
+  STAGE_DOMAIN: crypto-nodes.kotyata.space
+  PROD_SERVER: s4124.serverel.net
+  PROD_DOMAIN: crypto.hosting
+  TARGET_PORT: 9004
+
+.main_build_settings: &main_build_settings
+  stage: build
+  image: docker:stable
+  script:
+    - docker login -u $REGISTRY_USER -p $REGISTRY_PASS $REGISTRY
+    - docker build --build-arg ENV_FILE=$DEPLOY_ENV -t $CONTAINER_IMAGE:$CONTAINER_IMAGE_TAG .
+    - docker image push $CONTAINER_IMAGE:$CONTAINER_IMAGE_TAG
+
+.main_deploy_settings: &main_deploy_settings
+  stage: deploy
+  image: alpine:latest
+  variables:
+    ANSIBLE_HOST_KEY_CHECKING: "False"
+  before_script:
+    - apk update && apk add openssh-client bash
+    - install -m 644 -d ~/.ssh
+    - install -m 600 /dev/null ~/.ssh/id_rsa
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+    - echo "Host *\n\tStrictHostKeyChecking no" >> ~/.ssh/config
+    - wget https://raw.githubusercontent.com/johanhaleby/bash-templater/refs/heads/master/templater.sh -O templater
+  after_script:
+    - echo "deploy to $TARGET_HOST"
+    - touch .env.$DEPLOY_ENV
+    - bash templater docker-compose.dep.yml > docker-compose.yml
+    - ssh -o StrictHostKeyChecking=no root@$TARGET_HOST "mkdir -p $LOCAL_PATH"
+    - scp -o StrictHostKeyChecking=no .env.$DEPLOY_ENV root@$TARGET_HOST:$LOCAL_PATH/.env
+    - scp -o StrictHostKeyChecking=no docker-compose.yml root@$TARGET_HOST:$LOCAL_PATH/docker-compose.yml
+    - ssh -o StrictHostKeyChecking=no root@$TARGET_HOST "cd $LOCAL_PATH; docker-compose -f ../../docker-compose.yml -f docker-compose.yml up -d; docker exec ingress nginx -s reload"
+
+stages:
+  - build
+  - deploy
+
+Build:Staging:
+  <<: *main_build_settings
+  variables:
+    DEPLOY_ENV: staging
+  only:
+    - develop
+    - staging
+
+Build:Production:
+  <<: *main_build_settings
+  variables:
+    DEPLOY_ENV: production
+  only:
+    - main
+    - master
+    - production
+
+Deploy:Staging:
+  <<: *main_deploy_settings
+  needs:
+    - Build:Staging
+  environment:
+    name: staging
+  variables:
+    NAMESPACE: "kotyata.space"
+    DEPLOY_ENV: staging
+    TARGET_HOST: $STAGE_SERVER
+  script:
+    - echo "deploy to $TARGET_HOST"
+  only:
+    - develop
+    - staging
+
+Deploy:Production:
+  <<: *main_deploy_settings
+  needs:
+    - Build:Production
+  environment:
+    name: production
+  variables:
+    NAMESPACE: "crypto.hosting"
+    DEPLOY_ENV: production
+    TARGET_HOST: $PROD_SERVER
+  script:
+    - echo "deploy to $TARGET_HOST"
+  when: manual
+  only:
+    - main
+    - master
+    - production

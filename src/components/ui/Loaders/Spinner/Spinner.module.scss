@@ -1,0 +1,14 @@
+.spinner {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: conic-gradient(#0000 10%, var(--Neutral-Gray-1));
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 4px), #000 0);
+  animation: s3 0.45s infinite linear;
+}
+
+@keyframes s3 {
+  to {
+    transform: rotate(1turn);
+  }
+}

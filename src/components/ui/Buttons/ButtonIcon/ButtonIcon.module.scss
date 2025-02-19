@@ -1,0 +1,158 @@
+.button {
+  cursor: pointer;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+  @include transition;
+
+  .counter {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-inline: 5px;
+
+    border-radius: 50%;
+
+    @include manrope_400_16;
+
+    &.singleDigit {
+      width: 20px;
+      height: 20px;
+    }
+
+    &.twoDigit {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .spinner {
+    min-width: 23px;
+    min-height: 23px;
+  }
+
+  &.l {
+    inline-size: 58px;
+    block-size: 58px;
+    padding: 9px;
+
+    svg {
+      inline-size: 40px;
+      block-size: 40px;
+    }
+  }
+
+  &.m {
+    inline-size: 40px;
+    block-size: 40px;
+    padding: 8px;
+
+    svg {
+      inline-size: 24px;
+      block-size: 24px;
+    }
+  }
+
+  &.s {
+    inline-size: 32px;
+    block-size: 32px;
+    padding: 8px;
+
+    svg {
+      inline-size: 16px;
+      block-size: 16px;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.36;
+  }
+
+  &.accent {
+    color: var(--Neutral-Black);
+    background-color: var(--Accents-Brand-Yellow);
+
+    .counter {
+      color: var(--Neutral-White);
+      background-color: var(--Accents-Brand-Green);
+    }
+  }
+
+  &.primary {
+    color: var(--Accents-Brand-Blue);
+    background-color: var(--Accents-Light-Blue2);
+
+    .counter {
+      color: var(--Neutral-Black);
+      background-color: var(--Accents-Brand-Yellow);
+    }
+
+    &:hover:enabled {
+      background-color: var(--Accents-Light-Blue);
+    }
+
+    &:active:enabled {
+      color: var(--Neutral-White);
+      background-color: var(--Neutral-Black);
+    }
+  }
+
+  &.secondary {
+    color: var(--Neutral-Black);
+    background-color: var(--Neutral-Card-Background);
+    @include transition;
+
+    svg {
+      color: var(--Neutral-White);
+    }
+
+    .counter {
+      color: var(--Neutral-Black);
+      background-color: var(--Accents-Brand-Yellow);
+    }
+
+    &:hover:enabled {
+      color: var(--Neutral-Black);
+      background-color: transparent;
+
+      svg {
+        color: var(--Neutral-Black);
+      }
+    }
+
+    &:active:enabled {
+      color: var(--Neutral-White);
+      background-color: var(--Neutral-Black);
+    }
+  }
+
+  &.stroke {
+    color: var(--Accents-Brand-Blue);
+    background-color: transparent;
+    border: 2px solid var(--Neutral-Gray-3);
+
+    .counter {
+      color: var(--Neutral-Black);
+      background-color: var(--Accents-Brand-Yellow);
+    }
+
+    &:hover:enabled {
+      border: 2px solid var(--Accents-Light-Blue);
+    }
+
+    &:active:enabled {
+      color: var(--Neutral-Black);
+    }
+  }
+}

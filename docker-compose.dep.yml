@@ -1,0 +1,19 @@
+services:
+  {{SERVICE}}:
+    image: {{CONTAINER_IMAGE}}:{{CONTAINER_IMAGE_TAG}}
+    container_name: {{SERVICE}}
+    restart: always
+    networks:
+      {{NAMESPACE}}:
+        aliases:
+          - {{SERVICE}}.{{NAMESPACE}}
+    ports:
+      - "127.0.0.1:{{TARGET_PORT}}:80"
+    env_file:
+      - {{LOCAL_PATH}}/.env
+    volumes:
+      - "{{LOCAL_PATH}}/.env:/var/www/.env"
+      - "{{LOCAL_PATH}}/logs:/var/www/logs"
+    extra_hosts:
+      - "redis:host-gateway"
+      - "mongo:host-gateway"
