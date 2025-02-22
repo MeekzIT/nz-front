@@ -12,6 +12,7 @@ import useToggle from '@/utils/hooks/useToggle';
 
 export const Header = () => {
   const pathname = usePathname();
+
   const [isOpen, toggle, setIsOpen] = useToggle(false);
 
   return (

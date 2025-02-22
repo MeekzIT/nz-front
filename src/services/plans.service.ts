@@ -1,11 +1,10 @@
 import fetchConfig from '@/config/fetch.config';
 
-export const PlansService = {
-  async plansList(revalidate?: number) {
-    return await fetchConfig<PlansListItem[]>({
-      url: `tariffs/get-available-plans`,
+export const AboutService = {
+  async aboutUs() {
+    return await fetchConfig<any>({
+      url: `/about-us`,
       method: 'GET',
-      revalidate,
     });
   },
 };

@@ -1,8 +1,8 @@
-import PricingPage from '@/pageComponents/PricingPage/PricingPage';
+import AboutUs from '@/pageComponents/AboutUs/AboutUs';
 import React from 'react';
 
-const AboutUs = () => {
-  return <PricingPage />;
+const AboutUsPage = () => {
+  return <AboutUs />;
 };
 
-export default AboutUs;
+export default AboutUsPage;

@@ -1,4 +1,3 @@
-
 import { Manrope } from 'next/font/google';
 import './globals.scss';
 import { Header } from '@/components/layout/Header/Header';
@@ -7,7 +6,6 @@ import Providers from '@/components/Providers/Providers';
 
 const manrope = Manrope({
   subsets: ['latin'],
-
 });
 
 export default function RootLayout({
