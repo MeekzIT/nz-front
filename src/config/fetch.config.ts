@@ -30,9 +30,9 @@ export default async function fetchConfig<T>({
     }
 
     const data = await res.json();
-    
+
     return {
-      data: data[0],
+      data: data,
     };
   } catch (error) {
     return { error: error as Error };
