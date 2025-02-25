@@ -28,3 +28,11 @@ export type IInfiniteQueryOptions<T> = Omit<
   UseInfiniteQueryOptions<T, IBasicResponseError, InfiniteData<T>>,
   'queryKey' | 'queryFn' | 'getPreviousPageParam' | 'getNextPageParam' | 'initialPageParam'
 >;
+
+export interface ContactUsRequest {
+  firstName: string;
+  lastName: string;
+  phone: string;
+  email: string;
+  message: string;
+}
