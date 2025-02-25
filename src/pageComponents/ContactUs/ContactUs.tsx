@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import styles from './ContactUs.module.scss';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram } from 'react-icons/fa';
 import { ContactUsService } from '@/services/plans.service';
@@ -16,6 +17,8 @@ interface FormValues {
 }
 
 const ContactUs = () => {
+  const { t, i18n } = useTranslation();
+
   const {
     reset,
     register,
@@ -27,24 +30,25 @@ const ContactUs = () => {
   const [status, setStatus] = useState(true);
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log('Ֆորման ուղարկված է:', data);
+    console.log(t('form.submitted'), data);
     ContactUsService.aboutUs(data)
       .then((res) => {
         setStatus(true);
         setOpen(true);
-        console.log('Success:', res);
+        console.log(t('form.success'), res);
       })
       .catch((err) => {
         setStatus(false);
         setOpen(true);
-        console.error('Failed:', err);
+        console.error(t('form.failed'), err);
       });
     reset();
   };
+  console.log(t('errors.required'), i18n.language, "t('errors.required')");
 
   return (
     <div className={styles.root}>
-      {/* Ձախ կողմ - Կոնտակտային ինֆո */}
+      {/* Left Side - Contact Info */}
       <div className={styles.contactInfo}>
         <div className={styles.infoItem}>
           <a href='tel:5551234567'>
@@ -58,7 +62,7 @@ const ContactUs = () => {
         </div>
         <div className={styles.infoItem}>
           <FaMapMarkerAlt className={styles.icon} />
-          <span>8502 Preston Rd. Inglewood, Maine 98380</span>
+          <span>{t('contact.address')}</span>
         </div>
         <div className={styles.socialIcons}>
           <FaFacebook className={styles.socialIcon} />
@@ -66,20 +70,20 @@ const ContactUs = () => {
         </div>
       </div>
 
-      {/* Աջ կողմ - Ֆորմա */}
+      {/* Right Side - Form */}
       <div className={styles.formContainer}>
-        <h2 className={styles.formTitle}>ԿԱՊ ՄԵԶ ՀԵՏ</h2>
+        <h2 className={styles.formTitle}>{t('contact.title')}</h2>
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.row}>
             <div className={styles.inputContainer}>
               <input
                 type='text'
-                placeholder='Անուն'
+                placeholder={t('form.firstName')}
                 className={styles.input}
                 {...register('firstName', {
-                  required: 'Անունը պարտադիր է',
-                  minLength: { value: 2, message: 'Պետք է լինի առնվազն 2 նիշ' },
-                  pattern: { value: /^[Ա-Ֆա-ֆA-Za-z]+$/, message: 'Միայն տառեր են թույլատրված' },
+                  required: t('errors.required'),
+                  minLength: { value: 2, message: t('errors.minLength', { count: 2 }) },
+                  pattern: { value: /^[Ա-Ֆա-ֆA-Za-z]+$/, message: t('errors.lettersOnly') },
                 })}
               />
               {errors.firstName && <span className={styles.error}>{errors.firstName.message}</span>}
@@ -88,12 +92,12 @@ const ContactUs = () => {
             <div className={styles.inputContainer}>
               <input
                 type='text'
-                placeholder='Ազգանուն'
+                placeholder={t('form.lastName')}
                 className={styles.input}
                 {...register('lastName', {
-                  required: 'Ազգանունը պարտադիր է',
-                  minLength: { value: 2, message: 'Պետք է լինի առնվազն 2 նիշ' },
-                  pattern: { value: /^[Ա-Ֆա-ֆA-Za-z]+$/, message: 'Միայն տառեր են թույլատրված' },
+                  required: t('errors.required'),
+                  minLength: { value: 2, message: t('errors.minLength', { count: 2 }) },
+                  pattern: { value: /^[Ա-Ֆա-ֆA-Za-z]+$/, message: t('errors.lettersOnly') },
                 })}
               />
               {errors.lastName && <span className={styles.error}>{errors.lastName.message}</span>}
@@ -103,14 +107,11 @@ const ContactUs = () => {
           <div className={styles.inputContainer}>
             <input
               type='text'
-              placeholder='Հեռախոսահամար'
+              placeholder={t('form.phone')}
               className={styles.input}
               {...register('phone', {
-                required: 'Հեռախոսահամարը պարտադիր է',
-                pattern: {
-                  value: /^\+?\d{10,15}$/,
-                  message: 'Մուտքագրեք վավեր հեռախոսահամար',
-                },
+                required: t('errors.required'),
+                pattern: { value: /^\+?\d{10,15}$/, message: t('errors.invalidPhone') },
               })}
             />
             {errors.phone && <span className={styles.error}>{errors.phone.message}</span>}
@@ -119,13 +120,13 @@ const ContactUs = () => {
           <div className={styles.inputContainer}>
             <input
               type='email'
-              placeholder='Էլ. փոստ'
+              placeholder={t('form.email')}
               className={styles.input}
               {...register('email', {
-                required: 'Էլ. փոստը պարտադիր է',
+                required: t('errors.required'),
                 pattern: {
                   value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                  message: 'Սխալ էլ. փոստի ձևաչափ',
+                  message: t('errors.invalidEmail'),
                 },
               })}
             />
@@ -134,30 +135,27 @@ const ContactUs = () => {
 
           <div className={styles.inputContainer}>
             <textarea
-              placeholder='Հաղորդագրություն'
+              placeholder={t('form.message')}
               className={styles.textarea}
               {...register('message', {
-                required: 'Հաղորդագրությունը պարտադիր է',
-                minLength: { value: 10, message: 'Հաղորդագրությունը պետք է լինի առնվազն 10 նիշ' },
-                maxLength: {
-                  value: 500,
-                  message: 'Հաղորդագրությունը չի կարող գերազանցել 500 նիշը',
-                },
+                required: t('errors.required'),
+                minLength: { value: 10, message: t('errors.minLength', { count: 10 }) },
+                maxLength: { value: 500, message: t('errors.maxLength', { count: 500 }) },
               })}
             ></textarea>
             {errors.message && <span className={styles.error}>{errors.message.message}</span>}
           </div>
 
           <button type='submit' className={styles.submitButton}>
-            Ուղարկել
+            {t('form.submit')}
           </button>
         </form>
       </div>
       <CustomModal
         open={open}
         setOpen={setOpen}
-        title='Notification'
-        description='This is a message from the server.'
+        title={t('modal.title')}
+        description={t('modal.description')}
         status={status}
       />
     </div>
