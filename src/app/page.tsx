@@ -1,5 +1,5 @@
-import MainPage from '@/pageComponents/MainPage/MainPage';
+import HomePage from '@/pageComponents/HomePage/HomePage';
 
-export default function Home() {
-  return <MainPage />;
+export default async function Home() {
+  return <HomePage />;
 }
