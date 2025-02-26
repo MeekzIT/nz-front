@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import { ProjectsService } from '@/services/plans.service';
 import styles from './ProjectDetails.module.scss';
 import { Typography } from '@/components/ui/Typography';
+import { ProjectsService } from '@/services/about-us.service';
 
 const ProjectDetailsPage = async ({ id }: { id: string }) => {
   const data = await ProjectsService.getProjectData(Number(id));

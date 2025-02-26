@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './ProjectsPage.module.scss';
 
 import SliderComponent from '@/components/ui/Slider/Slider';
-import { ProjectsService } from '@/services/plans.service';
+import { ProjectsService } from '@/services/about-us.service';
 
 const ProjectsPage = async () => {
   const data = await ProjectsService.getAllProjectsData();

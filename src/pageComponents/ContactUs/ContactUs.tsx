@@ -5,7 +5,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import styles from './ContactUs.module.scss';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram } from 'react-icons/fa';
-import { ContactUsService } from '@/services/plans.service';
+import { ContactUsService } from '@/services/about-us.service';
 import CustomModal from '@/components/ui/Modal/Modal';
 
 interface FormValues {
