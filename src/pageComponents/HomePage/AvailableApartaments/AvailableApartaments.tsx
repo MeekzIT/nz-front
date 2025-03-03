@@ -1,10 +1,10 @@
-import { HomeSchemas } from '@/services/home-schemas';
+import { HomeAvailableSchemas } from '@/services/home-schemas';
 import styles from './AvailableApartaments.module.scss';
 import Image from 'next/image';
 import { AvaiableHomesButtonLInk } from '@/components/ui/AvaiableHomesButtonLInk/AvaiableHomesButtonLInk';
 
 export async function AvailableApartaments() {
-  const data = await HomeSchemas.schemaHome();
+  const data = await HomeAvailableSchemas.schemaAvailableHome();
 
   const floors = data.map(({ floor, count }, index) => ({
     floor,
@@ -16,7 +16,7 @@ export async function AvailableApartaments() {
     <div>
       <div className={styles.appartmentWrapper}>
         <div className={styles.availableHomes}>
-          <AvaiableHomesButtonLInk href='#' floors={floors} />
+          <AvaiableHomesButtonLInk href={'#'} floors={floors} />
           <Image
             className={styles.image}
             src='/assets/home-appartament.svg'

@@ -16,11 +16,11 @@ export const AvaiableHomesButtonLInk = forwardRef<HTMLAnchorElement, ILinkButton
         {floors.map(({ floor, label, description }, index) => (
           <a
             key={floor}
-            href={href}
+            href={`/schema/${floor}`}
             ref={ref}
             {...props}
             className={clsx(styles.button, styles.floor)}
-            style={{ "--index": index.toString() } as React.CSSProperties}
+            style={{ '--index': index.toString() } as React.CSSProperties}
           >
             <div>
               <span>{label}</span>
