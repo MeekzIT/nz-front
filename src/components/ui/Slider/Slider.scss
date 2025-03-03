@@ -1,6 +1,5 @@
 .sliderContainer {
     max-width: calc(100% - 480px);
-    margin: 0 auto;
     position: relative;
 }
 
@@ -64,17 +63,6 @@
     font-size: 14px !important;
     font-weight: bold;
 }
-
-// @media (min-width: 320px) {
-//     .sliderContainer {
-//         max-width: 100%;
-//     }
-
-//    .swiper-button-prev,
-//     .swiper-button-next {
-//         display: none;
-//     }
-// }
 
 @media (max-width: 768px) {
     .sliderContainer {
