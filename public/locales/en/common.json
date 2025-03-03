@@ -26,5 +26,17 @@
   "modal": {
     "title": "Notification",
     "description": "This is a message from the server."
+  },
+  "footer": {
+    "useful_links": "Useful Links",
+    "about_us": "About Us",
+    "projects": "Projects",
+    "contact_us": "Contact Us",
+    "contact": "Contact",
+    "follow_us": "Follow Us",
+    "phone_number": "0(406) 555-0120",
+    "email": "Jane.Cooper@gmail.com",
+    "address": "8502 Preston Rd. Inglewood, Maine 98380",
+    "facebook": "FB"
   }
 }

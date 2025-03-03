@@ -17,7 +17,7 @@ interface FormValues {
 }
 
 const ContactUs = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const {
     reset,
@@ -44,7 +44,6 @@ const ContactUs = () => {
       });
     reset();
   };
-  console.log(t('errors.required'), i18n.language, "t('errors.required')");
 
   return (
     <div className={styles.root}>

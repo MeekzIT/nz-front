@@ -26,5 +26,17 @@
   "modal": {
     "title": "Ծանուցում",
     "description": "Սա հաղորդագրություն է սերվերից։"
+  },
+  "footer": {
+    "useful_links": "Օգտակար հղումներ",
+    "about_us": "Մեր մասին",
+    "projects": "Նախագծեր",
+    "contact_us": "Կապ մեզ հետ",
+    "contact": "Կապ մեզ հետ",
+    "follow_us": "Հետևեք մեզ",
+    "phone_number": "0(406) 555-0120",
+    "email": "Jane.Cooper@gmail.com",
+    "address": "8502 Preston Rd. Inglewood, Maine 98380",
+    "facebook": "FB"
   }
 }

@@ -1,34 +1,165 @@
+// .footer {
+//   padding-top: 32px;
+//   border-top: 1px solid var(--Neutral-Gray-3);
+//   margin-top: auto;
+//   background-color: #08412e;
+//   color: white;
+
+//   .links {
+//     display: grid;
+//     margin-bottom: 24px;
+//     color: white;
+
+//     grid-template-columns: 1fr 1fr 1fr 1fr;
+//     grid-template-areas: 'logo product company documents';
+
+//     @include respond(tabletS) {
+//       grid-template-columns: 1fr 1fr;
+//       // grid-template-areas: 'product developers' 'company chains' 'documents chains';
+//       gap: 26px;
+//     }
+
+//     .header {
+//       font-size: 24px;
+//       margin-bottom: 24px;
+
+//       @include respond(tablet) {
+//         margin-bottom: 16px;
+//       }
+
+//       @include respond(tabletS) {
+//         margin-bottom: 12px;
+//       }
+//     }
+
+//     .list {
+//       display: flex;
+//       flex-direction: column;
+//       gap: 14px;
+
+//       @include respond(tablet) {
+//         gap: 12px;
+//       }
+
+//       .link {
+//         font-size: 18px;
+//         color: white;
+
+//         &:hover {
+//           color: white;
+//         }
+//       }
+//     }
+//     .listSocial {
+//       display: flex;
+//       gap: 14px;
+//       .iconSocial {
+//         font-size: 24px;
+//       }
+//     }
+//   }
+
+//   .contacts {
+//     display: flex;
+//     justify-content: space-between;
+//     padding: 24px 0;
+//     border-top: 1px solid var(--Neutral-Gray-3);
+
+//     .socials {
+//       display: flex;
+//       align-items: center;
+//       gap: 16px;
+
+//       .icon {
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         height: 40px;
+//         width: 40px;
+//         border-radius: 50%;
+//         background: var(--Neutral-Gray-2);
+//         cursor: pointer;
+//       }
+//     }
+//   }
+
+//   .product {
+//     grid-area: product;
+//   }
+//   .chains {
+//     grid-area: chains;
+//   }
+//   .company {
+//     grid-area: company;
+//   }
+//   .documents {
+//     grid-area: documents;
+//   }
+//   .developers {
+//     grid-area: developers;
+//   }
+// }
+
+// .iconsBox {
+//   display: flex;
+//   gap: 10px;
+// }
+
+// .copyright {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .meekz {
+//   text-decoration: underline !important;
+// }
+
 .footer {
   padding-top: 32px;
   border-top: 1px solid var(--Neutral-Gray-3);
-  background-color: var(--Neutral-White);
   margin-top: auto;
+  background-color: #08412e;
+  color: white;
 
   .links {
     display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 'logo product company documents';
+    gap: 32px;
     margin-bottom: 24px;
 
-    // grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    // grid-template-areas: 'product chains company documents developers';
-    grid-template-areas: 'product company documents developers';
-
-    @include respond(tabletS) {
-      grid-template-columns: 1fr 1fr;
-      // grid-template-areas: 'product developers' 'company chains' 'documents chains';
-      grid-template-areas: 'product developers' 'company developers' 'documents developers';
+    @include respond(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        'logo'
+        'product'
+        'company'
+        'documents';
       gap: 26px;
     }
 
+    @include respond(mobile) {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'logo'
+        'product'
+        'company'
+        'documents';
+      gap: 20px;
+    }
+
     .header {
+      font-size: 24px;
       margin-bottom: 24px;
 
       @include respond(tablet) {
         margin-bottom: 16px;
       }
 
-      @include respond(tabletS) {
+      @include respond(mobile) {
         margin-bottom: 12px;
+        font-size: 20px;
       }
     }
 
@@ -42,11 +173,21 @@
       }
 
       .link {
-        color: var(--Neutral-Gray-1);
+        font-size: 18px;
+        color: white;
 
         &:hover {
-          color: var(--Accents-Brand-Blue);
+          color: white;
         }
+      }
+    }
+
+    .listSocial {
+      display: flex;
+      gap: 14px;
+
+      .iconSocial {
+        font-size: 24px;
       }
     }
   }
@@ -56,6 +197,12 @@
     justify-content: space-between;
     padding: 24px 0;
     border-top: 1px solid var(--Neutral-Gray-3);
+
+    @include respond(mobile) {
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
 
     .socials {
       display: flex;
@@ -90,4 +237,19 @@
   .developers {
     grid-area: developers;
   }
+}
+
+.iconsBox {
+  display: flex;
+  gap: 10px;
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.meekz {
+  text-decoration: underline !important;
 }

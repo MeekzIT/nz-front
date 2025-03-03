@@ -26,5 +26,17 @@
   "modal": {
     "title": "Уведомление",
     "description": "Это сообщение с сервера."
+  },
+  "footer": {
+    "useful_links": "Полезные ссылки",
+    "about_us": "О нас",
+    "projects": "Проекты",
+    "contact_us": "Свяжитесь с нами",
+    "contact": "Связь",
+    "follow_us": "Подписывайтесь на нас",
+    "phone_number": "0(406) 555-0120",
+    "email": "Jane.Cooper@gmail.com",
+    "address": "8502 Preston Rd. Инглвуд, Мэн 98380",
+    "facebook": "FB"
   }
 }
