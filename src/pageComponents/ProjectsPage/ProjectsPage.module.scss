@@ -1,11 +1,9 @@
-.root {
-  background: var(--Neutral-White);
-}
 
 .container {
-  margin: 120px 0 371px 70px;
+  margin: 120px 0 0 70px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 63px;
 }
 
@@ -47,6 +45,7 @@
     flex-direction: column;
     margin-left: 17px;
     margin-top: 57px;
+    align-items: unset;
   }
 
   .horizontalblock {
