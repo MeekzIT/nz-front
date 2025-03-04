@@ -1,7 +1,7 @@
 import axios from 'axios';
 import fetchConfig from '@/config/fetch.config';
 
-import { ContactUsRequest } from './model';
+import { BidRequest, ContactUsRequest } from './model';
 
 export const AboutService = {
   async aboutUs() {

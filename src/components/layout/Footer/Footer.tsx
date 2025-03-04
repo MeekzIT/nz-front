@@ -31,32 +31,32 @@ export const Footer = () => {
       id: 'contact',
       links: [
         {
-          id: 1,
+          id: 890,
           name: (
-            <div className={styles.iconsBox}>
+            <span className={styles.iconsBox}>
               <FaPhoneAlt />
               {t('footer.phone_number')}
-            </div>
+            </span>
           ),
           href: '',
         },
         {
-          id: 2,
+          id: 89,
           name: (
-            <div className={styles.iconsBox}>
+            <span className={styles.iconsBox}>
               <MdEmail />
               {t('footer.email')}
-            </div>
+            </span>
           ),
           href: '',
         },
         {
-          id: 3,
+          id: 34,
           name: (
-            <div className={styles.iconsBox}>
+            <span className={styles.iconsBox}>
               <FaLocationDot />
               {t('footer.address')}
-            </div>
+            </span>
           ),
           href: '',
         },
@@ -66,18 +66,22 @@ export const Footer = () => {
 
   const socialLinks = [
     {
+      id: 1,
       icon: <FaFacebookF />,
       href: 'https://t.me/cryptonode_io',
     },
     {
+      id: 2,
       icon: <FaInstagram />,
       href: 'https://t.me/cryptonode_io',
     },
     {
+      id: 3,
       icon: <FaWhatsapp />,
       href: 'https://t.me/cryptonode_io',
     },
     {
+      id: 4,
       icon: <FaTelegramPlane />,
       href: 'https://t.me/cryptonode_io',
     },
@@ -110,8 +114,8 @@ export const Footer = () => {
             </Typography>
             <ul className={styles.listSocial}>
               {socialLinks.map((link) => (
-                <Link key={link.href} href={link.href}>
-                  <div className={styles.iconSocial}>{link.icon}</div>
+                <Link key={link.id} href={link.href}>
+                  <Typography className={styles.iconSocial}>{link.icon}</Typography>
                 </Link>
               ))}
             </ul>

@@ -1,18 +1,25 @@
 import clsx from 'clsx';
 import { Dispatch, FC, SetStateAction } from 'react';
 import Link from 'next/link';
-import { navigationLinks } from '../../Header.constants';
 import styles from './HeaderMobileContent.module.scss';
 import { Container } from '@/components/ui/Container';
 import { Typography } from '@/components/ui/Typography';
-import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 
 interface IHeaderDropdownContent {
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 export const HeaderMobileContent: FC<IHeaderDropdownContent> = ({ setIsOpen }) => {
+  const { t } = useTranslation();
   const handleClose = () => setIsOpen(false);
+
+  const navigationLinks = [
+    { name: t('home.home'), href: '/' },
+    { name: t('home.projects'), href: '/projects' },
+    { name: t('home.about'), href: '/about-us' },
+    { name: t('home.contact'), href: '/contact-us' },
+  ];
 
   return (
     <Container>
@@ -25,7 +32,6 @@ export const HeaderMobileContent: FC<IHeaderDropdownContent> = ({ setIsOpen }) =
             className={clsx(styles.link)}
           >
             <Typography variant='paragraphs.subtitle_semibold'>{item.name}</Typography>
-            <Image src='/assets/icon-chevron-right.svg' width={20} height={20} alt='chevron' />
           </Link>
         ))}
       </div>

@@ -19,3 +19,74 @@
     }
   }
 }
+
+/* styles.module.css */
+.languageSelectWrapper {
+  position: relative;
+  display: block; /* Ensures full width */
+  width: 100%;
+  max-width: 400px; /* Optional: Adjust max-width as needed */
+  margin: 0 auto; /* Centering */
+}
+
+.languageSelect {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #ffffff;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+  width: 100%;
+  color: #333;
+  text-align: center;
+}
+
+/* Custom dropdown arrow */
+.languageSelectWrapper::after {
+  content: '▼';
+  font-size: 14px;
+  color: #666;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Full-width on smaller screens */
+@media (max-width: 768px) {
+  .languageSelect {
+    font-size: 16px;
+    padding: 14px;
+    border-radius: 10px;
+  }
+}
+
+/* Fixes for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  .languageSelect {
+    padding-right: 40px; /* Prevents overlap with the arrow */
+  }
+}
+
+/* Hover & Focus Effects */
+.languageSelect:hover {
+  border-color: #aaa;
+}
+
+.languageSelect:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Option styling */
+.languageSelect option {
+  font-size: 24px;
+  padding: 10px;
+}

@@ -1,12 +1,14 @@
 .navList {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 20px;
   border-bottom: 1px solid var(--Stoke-Black);
   padding: 24px 0;
   margin-bottom: 32px;
 
   .link {
+    color: white;
+    font-size: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
