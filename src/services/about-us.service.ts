@@ -48,4 +48,24 @@ export const ContactUsService = {
       throw error;
     }
   },
+
+  async Bit(data: BidRequest): Promise<any> {
+    console.log('Sent Data:', data);
+
+    try {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/bid`, data, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      console.log('Response:', response.data);
+
+      return response.data;
+    } catch (error) {
+      console.error('Error:', error);
+
+      throw error;
+    }
+  },
 };

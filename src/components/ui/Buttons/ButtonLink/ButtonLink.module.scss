@@ -29,7 +29,7 @@
     }
 
     &:hover {
-      background-color: var(--Accents-Light-Blue);
+      background-color: #157152;
       color: var(--Neutral-White);
     }
 
@@ -61,7 +61,7 @@
 
   &.primary {
     color: var(--Neutral-White);
-    background-color: var(--Accents-Brand-Blue);
+    background-color: #08412e;
 
     .counter {
       color: var(--Neutral-Black);
@@ -69,7 +69,7 @@
     }
 
     &:hover {
-      background-color: var(--Accents-Light-Blue);
+      background-color: #157152;
     }
 
     // &:active:enabled {
@@ -88,7 +88,7 @@
     }
 
     &:hover {
-      background-color: var(--Neutral-Gray-3);
+      background-color: #157152;
     }
 
     &:active {
@@ -108,7 +108,7 @@
     }
 
     &:hover {
-      border-color: var(--Accents-Light-Blue);
+      border-color: #157152;
     }
 
     // &:active:enabled {
@@ -150,7 +150,7 @@
   &.primary {
     color: var(--Accents-Brand-Green);
     &:hover {
-      color: var(--Accents-Green-2);
+      color: #157152;
     }
 
     &:active {
@@ -161,7 +161,7 @@
   &.accent {
     color: var(--Accents-Brand-Yellow);
     &:hover {
-      color: var(--Accents-Yellow-2);
+      color: #157152;
     }
 
     &:active {

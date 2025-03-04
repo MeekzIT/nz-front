@@ -38,5 +38,22 @@
     "email": "Jane.Cooper@gmail.com",
     "address": "8502 Preston Rd. Inglewood, Maine 98380",
     "facebook": "FB"
-  }
+  },
+  "appartament": {
+  "floorId": "Հարկ",
+  "square_meter": "ՄԱԿԵՐԵՍ",
+  "value": "{{value}} մ²",
+  "room_count": "Սենյակների քանակ",
+  "hallway_i18": "Մուտք",
+  "kitchen_i18": "Խոհանոց",
+  "living_room_i18": "Հյուրասենյակ",
+  "bedroom_i18": "Ննջարան",
+  "bathroom_i18": "Լոգասենյակ",
+  "office_i18": "Աշխատասենյակ",
+  "closet_i18": "Պահարան",
+  "terasa_i18": "Տեռաս",
+  "balcony_i18":"Պատշգամբ",
+  "order":"Դիմել հիմա",
+  "application":"ՈՒՂԱՐԿԵԼ ՀԱՅՏ"
+}
 }
