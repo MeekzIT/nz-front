@@ -7,18 +7,20 @@ import Image from 'next/image';
 
 const SchemaPage = async ({ id }: { id: string }) => {
   const floorData = await HomeSchemas.homeSchemas(id);
-
+  console.log(floorData,"1");
+  
   return (
     <div className={styles.schema}>
       {floorData.length &&
         <>
           <div style={{ position: 'relative', display: 'inline-block' }}>
-            <Image
+            
+            <img
               src={floorData[0].imageUrl}
-              alt="Floor Plan"
+              alt={`Floor Plan`}
               width={4678}
               height={3308}
-              priority // Ускоряет загрузку, если важно для LCP
+              // priority // Ускоряет загрузку, если важно для LCP
             />
             <svg
               viewBox='0 0 4678 3308'
@@ -29,7 +31,7 @@ const SchemaPage = async ({ id }: { id: string }) => {
                   <polygon
                     key={id}
                     points={coordinates}
-                    className={`${styles.hoverEffect} ${in_stock ? styles.inStock : styles.outOfStock}`}
+                    className={`${styles.hoverEffect} ${!in_stock ? styles.inStock : styles.outOfStock}`}
                   />
                 </Link>
               ))}
