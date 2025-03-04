@@ -1,0 +1,39 @@
+.tooltip {
+  position: absolute;
+  background-color: #08412e;
+  color: white;
+  padding: 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1000;
+  transform: translate(-50%, -100%);
+}
+
+.hoverEffect {
+  cursor: pointer;
+  fill: transparent;
+  stroke: transparent;
+  transition:
+    fill 0.3s ease,
+    stroke 0.3s ease;
+
+  &:hover {
+    stroke-width: 3;
+  }
+}
+
+.inStock {
+  &:hover {
+    fill: rgba(255, 0, 0, 0.5);
+    stroke: red;
+  }
+}
+
+.outOfStock {
+  &:hover {
+    fill: rgba(255, 255, 0, 0.5);
+    stroke: yellow;
+  }
+}

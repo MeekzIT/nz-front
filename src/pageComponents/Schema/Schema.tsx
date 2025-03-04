@@ -3,38 +3,36 @@ import { HomeSchemas } from '@/services/home-schemas';
 import CirculeButtonNumber from '@/components/ui/CirculeButtonNumber/CirculeButtonNumber';
 import { foolNumbers } from './constants';
 import Link from 'next/link';
-import Image from 'next/image';
+import TooltipPolygon from '@/components/ui/TooltipPolygon/TooltipPolygon';
 
 const SchemaPage = async ({ id }: { id: string }) => {
   const floorData = await HomeSchemas.homeSchemas(id);
-  console.log(floorData,"1");
-  
+
   return (
     <div className={styles.schema}>
-      {floorData.length &&
+      {floorData.length && (
         <>
           <div style={{ position: 'relative', display: 'inline-block' }}>
-            
-            <img
-              src={floorData[0].imageUrl}
-              alt={`Floor Plan`}
-              width={4678}
-              height={3308}
-              // priority // Ускоряет загрузку, если важно для LCP
-            />
+            <img src={floorData[0].imageUrl} alt={`Floor Plan`} width={4678} height={3308} />
             <svg
               viewBox='0 0 4678 3308'
               style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
             >
-              {floorData[0].Appartements.map(({ id, coordinates, in_stock }) => (
-                <Link key={id} href={`/appartement/${id}`}>
-                  <polygon
-                    key={id}
-                    points={coordinates}
-                    className={`${styles.hoverEffect} ${!in_stock ? styles.inStock : styles.outOfStock}`}
-                  />
-                </Link>
-              ))}
+              {floorData[0].Appartements.map(
+                ({ id, coordinates, in_stock, room_count, square_meter }) => (
+                  <>
+                    <Link key={id} href={`/appartement/${id}`}>
+                      <TooltipPolygon
+                        id={id}
+                        coordinates={coordinates}
+                        in_stock={in_stock}
+                        room_count={room_count}
+                        square_meter={square_meter}
+                      />
+                    </Link>
+                  </>
+                ),
+              )}
             </svg>
           </div>
           <div>
@@ -53,7 +51,7 @@ const SchemaPage = async ({ id }: { id: string }) => {
             </div>
           </div>
         </>
-      }
+      )}
     </div>
   );
 };
