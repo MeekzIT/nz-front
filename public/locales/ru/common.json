@@ -38,5 +38,22 @@
     "email": "Jane.Cooper@gmail.com",
     "address": "8502 Preston Rd. Инглвуд, Мэн 98380",
     "facebook": "FB"
-  }
+  },
+  "appartament": {
+  "floorId": "Этаж",
+  "square_meter": "Квадратный метр",
+  "value": "{{value}} м²",
+  "room_count": "Количество комнат",
+  "hallway_i18": "Прихожая",
+  "kitchen_i18": "Кухня",
+  "living_room_i18": "Гостиная",
+  "bedroom_i18": "Спальня",
+  "bathroom_i18": "Ванная",
+  "office_i18": "Кабинет",
+  "closet_i18": "Гардероб",
+  "terasa_i18": "Терасса",
+  "balcony_i18":"Балкон",
+  "order":"Подать заявку сейчас",
+  "application":"ОТПРАВИТЬ ЗАЯВКУ"
+}
 }

@@ -36,3 +36,9 @@ export interface ContactUsRequest {
   email: string;
   message: string;
 }
+
+export interface BidRequest {
+  firstName: string;
+  lastName: string;
+  phone: string;
+}

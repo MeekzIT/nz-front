@@ -12,6 +12,7 @@ export async function AvailableApartaments() {
     label: `${floor}-ՐԴ ՀԱՐԿ`,
     description: `ՀԱՍԱՆԵԼ Է ${count} ԲՆԱԿԱՐԱՆ`,
   }));
+
   return (
     <div>
       <div className={styles.appartmentWrapper}>
@@ -31,7 +32,7 @@ export async function AvailableApartaments() {
 
             <p>
               Բնակելի համալիրն ունի 22 վերգետնյա հարկ և քառահարկ ստորգետնյա ավտոկայանատեղի։ Շենքում
-              առկա է 158 բնակարան։ Կան մի շարք հարմարություններ։  Գնորդները կարող են իրենց
+              առկա է 158 բնակարան։ Կան մի շարք հարմարություններ։ Գնորդները կարող են իրենց
               բնակարանների ներքին հարդարման
             </p>
           </div>
