@@ -55,5 +55,11 @@
     "balcony_i18":"Balcony",
     "order":"Apply now!",
   "application":"SEND APPLICATION"
+  },
+  "home":{
+    "home":"Home",
+    "projects":"Projects",
+    "about":"About Us",
+    "contact":"Contact Us"
   }
 }

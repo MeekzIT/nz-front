@@ -5,7 +5,8 @@ import { HeaderMobileContent } from './HeaderMobileContent/HeaderMobileContent';
 import { RemoveScroll } from 'react-remove-scroll';
 import { animateHelper } from '@/utils/helpers/animate.helper';
 import styles from './HeaderMobile.module.scss';
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface HeaderMobileProps {
   isOpen: boolean;
@@ -14,6 +15,17 @@ interface HeaderMobileProps {
 }
 
 export const HeaderMobile = ({ isOpen, setIsOpen, toggle }: HeaderMobileProps) => {
+  const { i18n } = useTranslation();
+  const [language, setLanguage] = useState<string>('am');
+
+  const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedLang = event.target.value;
+
+    setLanguage(selectedLang);
+    i18n.changeLanguage(selectedLang);
+    localStorage.setItem('i18nextLng', selectedLang);
+  };
+
   return (
     <RemoveScroll enabled={isOpen}>
       <div className={styles.container}>
@@ -31,6 +43,18 @@ export const HeaderMobile = ({ isOpen, setIsOpen, toggle }: HeaderMobileProps) =
               className={styles.content}
             >
               <HeaderMobileContent setIsOpen={setIsOpen} />
+              <div className={styles.languageSelectWrapper}>
+                <select
+                  className={styles.languageSelect}
+                  id='language-select'
+                  value={language}
+                  onChange={handleLanguageChange}
+                >
+                  <option value='am'>🇦🇲</option>
+                  <option value='ru'>🇷🇺</option>
+                  <option value='en'>🇬🇧</option>
+                </select>
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
