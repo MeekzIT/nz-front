@@ -1,32 +1,57 @@
-import Image from 'next/image';
-import styles from './ProjectDetails.module.scss';
-import { Typography } from '@/components/ui/Typography';
-import { ProjectsService } from '@/services/about-us.service';
+import styles from './Schema.module.scss';
 import { HomeSchemas } from '@/services/home-schemas';
+import CirculeButtonNumber from '@/components/ui/CirculeButtonNumber/CirculeButtonNumber';
+import { foolNumbers } from './constants';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const SchemaPage = async ({ id }: { id: string }) => {
-  const data = await HomeSchemas.homeSchemas(id);
+  const floorData = await HomeSchemas.homeSchemas(id);
 
   return (
-    <div style={{ position: 'relative', display: 'inline-block' }}>
-      {/* <img src={floorImage} alt='Floor Plan' width={1600} height={1200} />
-      <svg
-        viewBox='0 0 1600 1200'
-        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-      >
-        {apartments.map(({ id, coords }) => (
-          <polygon
-            key={id}
-            points={coords}
-            fill={hoveredId === id ? 'rgba(255, 255, 0, 0.5)' : 'transparent'}
-            stroke='yellow'
-            strokeWidth={hoveredId === id ? 3 : 1}
-            onMouseEnter={() => setHoveredId(id)}
-            onMouseLeave={() => setHoveredId(null)}
-            style={{ cursor: 'pointer' }}
-          />
-        ))}
-      </svg> */}
+    <div className={styles.schema}>
+      {floorData.length &&
+        <>
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <Image
+              src={floorData[0].imageUrl}
+              alt="Floor Plan"
+              width={4678}
+              height={3308}
+              priority // Ускоряет загрузку, если важно для LCP
+            />
+            <svg
+              viewBox='0 0 4678 3308'
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+            >
+              {floorData[0].Appartements.map(({ id, coordinates, in_stock }) => (
+                <Link key={id} href={`/appartement/${id}`}>
+                  <polygon
+                    key={id}
+                    points={coordinates}
+                    className={`${styles.hoverEffect} ${in_stock ? styles.inStock : styles.outOfStock}`}
+                  />
+                </Link>
+              ))}
+            </svg>
+          </div>
+          <div>
+            <div className={styles.floorBlock}>
+              <p className={styles.floorNumber}>{id}</p>
+              <p className={styles.floorText}>Հարկ</p>
+            </div>
+            <div className={styles.gridContainer}>
+              {foolNumbers.map((number) => (
+                <CirculeButtonNumber
+                  key={number}
+                  numberData={number}
+                  isChoiseNumber={id === number}
+                />
+              ))}
+            </div>
+          </div>
+        </>
+      }
     </div>
   );
 };

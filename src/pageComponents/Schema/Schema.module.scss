@@ -1,0 +1,70 @@
+.schema {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 88px 133px 0 70px;
+
+  .hoverEffect {
+    cursor: pointer;
+    fill: transparent;
+    stroke: transparent;
+    transition:
+      fill 0.3s ease,
+      stroke 0.3s ease;
+
+    &:hover {
+      stroke-width: 3;
+    }
+  }
+
+  .inStock {
+    &:hover {
+      fill: rgba(255, 0, 0, 0.5);
+      stroke: red;
+    }
+  }
+
+  .outOfStock {
+    &:hover {
+      fill: rgba(255, 255, 0, 0.5);
+      stroke: yellow;
+    }
+  }
+
+  .gridContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-items: center;
+  }
+
+  .floorBlock {
+    width: 205px;
+    height: 165px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #08412e;
+    color: white;
+    padding: 18px 60px;
+    margin-bottom: 28px;
+  }
+
+  .floorNumber {
+    font-family: Bokonique;
+    font-weight: 700;
+    font-size: 89px;
+    line-height: 58px;
+    letter-spacing: -2.5%;
+    text-align: center;
+  }
+  .floorText {
+    font-family: Bokonique;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 58px;
+    letter-spacing: -2.5%;
+  }
+}

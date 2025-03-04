@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    domains: ['res.cloudinary.com'], // Add your image host domains here
+    domains: ['back.nurazyanconstruction.am'], // Разрешаем загрузку изображений с этого хоста
   },
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.('.svg'));

@@ -1,0 +1,29 @@
+.circuleButtonContainer {
+  // width: 96px;
+  // height: 96px;
+  width: 8vw; // 8% от ширины экрана
+  height: 8vw;
+  max-width: 96px; // Максимальный размер
+  max-height: 96px;
+  min-width: 40px; // Минимальный размер
+  min-height: 40px;
+  border: solid 4px #08412e;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .number {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -2.5%;
+    text-align: center;
+  }
+
+  &.isActived {
+    background-color: #08412e;
+    color: #fff;
+  }
+}
